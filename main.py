@@ -48,6 +48,9 @@ while(cap.isOpened()):
         elif (y4_tip < y1_tip):
             print("I")
             cv2.putText(flippedRGB, 'LETTER: I', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+        elif (abs(x1_tip-x3_tip) < 120 and abs(y3_tip-y1_tip) < 30):
+            print('W')
+            cv2.putText(flippedRGB, 'LETTER: W', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
         elif (abs(y_tip-y1_tip) < 70 and abs(y_tip-y2_tip) < 80 and abs(x1_tip-x2_tip) > 50 and abs(x_tip-x1_tip) < 40):
             print('K')
             cv2.putText(flippedRGB, 'LETTER: K', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
