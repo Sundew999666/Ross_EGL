@@ -38,11 +38,11 @@ while(cap.isOpened()):
         cv2.circle(flippedRGB, (x2_tip, y2_tip), 10, (0, 0, 255), -1)
         cv2.circle(flippedRGB, (x3_tip, y3_tip), 10, (0, 0, 0), -1)
         cv2.circle(flippedRGB, (x4_tip, y4_tip), 10, (255, 255, 255), -1)
-        print(f'БОЛЬШОЙ {x_tip}, {y_tip}', f'УКАЗАТЕЛЬНЫЙ {x1_tip}, {y1_tip};', f'СРЕДНИЙ {x2_tip}, {y2_tip};', f'БЕЗЫМЯННЫЙ {x3_tip}, {y3_tip};', f'МИЗИНЕЦ {x4_tip}, {y4_tip}.')
-        if (abs(x1_tip-x2_tip) < 30 and y1_tip > 250 and y2_tip > 250):
+        print(f'БОЛЬШОЙ {x_tip}, {y_tip};', f'УКАЗАТЕЛЬНЫЙ {x1_tip}, {y1_tip};', f'СРЕДНИЙ {x2_tip}, {y2_tip};', f'БЕЗЫМЯННЫЙ {x3_tip}, {y3_tip};', f'МИЗИНЕЦ {x4_tip}, {y4_tip}.')
+        if (abs(x1_tip-x2_tip) < 30 and y1_tip > 250 and y2_tip > 250 and y4_tip > y1_tip):
             print('N')
             cv2.putText(flippedRGB, 'LETTER: N', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
-        elif (abs(x1_tip-x2_tip) < 30 and y1_tip < 250 and y2_tip < 250):
+        elif (abs(x1_tip-x2_tip) < 30 and y1_tip < 250 and y2_tip < 250 and y4_tip > y1_tip):
             print('U')
             cv2.putText(flippedRGB, 'LETTER: U', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
         elif (abs(y_tip-y1_tip) < 70 and abs(y_tip-y2_tip) < 80 and abs(x1_tip-x2_tip) > 50 and abs(x_tip-x1_tip) < 40):
@@ -51,6 +51,12 @@ while(cap.isOpened()):
         elif (abs(x1_tip-x2_tip) > 50):
             print('V')
             cv2.putText(flippedRGB, 'LETTER: V', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+        else:
+            print('NO')
+            cv2.putText(flippedRGB, 'LETTER: -', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+    else:
+        print('NO')
+        cv2.putText(flippedRGB, 'LETTER: -', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
 
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
     cv2.imshow("Hands", res_image)
