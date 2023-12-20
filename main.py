@@ -59,10 +59,10 @@ while(cap.isOpened()):
             cv2.putText(flippedRGB, 'LETTER: V', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
         else:
             print('NO')
-            cv2.putText(flippedRGB, 'LETTER: -', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+            cv2.putText(flippedRGB, 'LETTER: NO LETTERS', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
     else:
         print('NO')
-        cv2.putText(flippedRGB, 'LETTER: -', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+        cv2.putText(flippedRGB, 'LETTER: NO LETTERS', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
 
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
     cv2.imshow("Hands", res_image)
