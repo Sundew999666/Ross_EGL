@@ -2,6 +2,6 @@ English deaf language analyser
 Made by Gunaev Ross
 To use this you need to install "main.py" and python libraries written in "requirements.txt" and run it
 It will automatically connect to your web-camera, so you should check it
-It can define letters in "BIKMNUVWY"
+It can define letters in "AEIKMNUVWY"
 You can see gestures in file "resources.png".
 THIS PROGRAM WORKS ONLY WITH WINDOWS

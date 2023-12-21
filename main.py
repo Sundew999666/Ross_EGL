@@ -39,8 +39,12 @@ while(cap.isOpened()):
         cv2.circle(flippedRGB, (x4_tip, y4_tip), 10, (255, 255, 255), -1)
         print(f"Большой: {x_tip, y_tip};", f"Указательный: {x1_tip, y1_tip};", f"Средний: {x2_tip, y2_tip};", f"Безымянный: {x3_tip, y3_tip};", f"Мизинец: {x4_tip, y4_tip}")
         if (abs(y_tip-y1_tip) < 20 and abs(y1_tip-y2_tip) < 20 and abs(y2_tip-y3_tip) < 20 and abs(y3_tip-y4_tip) < 20):
-            print('A')
-            cv2.putText(flippedRGB, 'LETTER: A', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+            if (abs(x2_tip-x_tip) > abs(x1_tip-x_tip)):
+                print('A')
+                cv2.putText(flippedRGB, 'LETTER: A', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
+            else:
+                print('E')
+                cv2.putText(flippedRGB, 'LETTER: E', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
         elif (abs(x_tip-x4_tip) < 310 and abs(y_tip-y4_tip) < 120 and abs(x_tip-x4_tip) > 110):
             print('Y')
             cv2.putText(flippedRGB, 'LETTER: Y', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0))
