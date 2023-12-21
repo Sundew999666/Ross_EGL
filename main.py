@@ -37,7 +37,6 @@ while(cap.isOpened()):
         cv2.circle(flippedRGB, (x2_tip, y2_tip), 10, (0, 0, 255), -1)
         cv2.circle(flippedRGB, (x3_tip, y3_tip), 10, (0, 0, 0), -1)
         cv2.circle(flippedRGB, (x4_tip, y4_tip), 10, (255, 255, 255), -1)
-        print(f'БОЛЬШОЙ {x_tip}, {y_tip};', f'УКАЗАТЕЛЬНЫЙ {x1_tip}, {y1_tip};', f'СРЕДНИЙ {x2_tip}, {y2_tip};', f'БЕЗЫМЯННЫЙ {x3_tip}, {y3_tip};', f'МИЗИНЕЦ {x4_tip}, {y4_tip}.')
 
         if (abs(x_tip-x4_tip) < 310 and abs(y_tip-y4_tip) < 120 and abs(x_tip-x4_tip) > 110):
             print('Y')
